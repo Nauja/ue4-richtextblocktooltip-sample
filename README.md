@@ -159,9 +159,13 @@ This makes the **URichTextBlock** use our decorator to parse and render `<toolti
 
 ## Creating a **DataTable** for default style set
 
-This is required to apply a default style to the **URichTextBlock** text. For this, I created a **DT_SampleTextStyleSet** data table with a **RichTextStyleRow** row structure and added a "Default" entry:
+This is required to apply a default style to the **URichTextBlock** text. For this, I created a **DT_SampleTextStyleSet** data table with a **RichTextStyleRow** row structure: 
 
-![RegisterDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-datatable.png)
+![SubclassDataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-subclass-datatable.png)
+
+I also added a "Default" entry:
+
+![DataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-datatable.png)
 
 The next step is to assign this data table to our **URichTextBlock** widget:
 

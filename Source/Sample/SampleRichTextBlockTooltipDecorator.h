@@ -21,4 +21,13 @@ public:
 	USampleRichTextBlockTooltipDecorator(const FObjectInitializer& ObjectInitializer);
 
 	virtual TSharedPtr<ITextDecorator> CreateDecorator(URichTextBlock* InOwner) override;
+	
+protected:
+	// Style used for text
+	UPROPERTY(EditAnywhere, Category=Appearance)
+	FTextBlockStyle TextStyle;
+
+	// Style used for tooltip text
+	UPROPERTY(EditAnywhere, Category=Appearance)
+	FTextBlockStyle TooltipTextStyle;
 };

@@ -8,8 +8,10 @@
 class FSampleRichInlineTooltip : public FRichTextDecorator
 {
 public:
-	FSampleRichInlineTooltip(URichTextBlock* InOwner)
+	FSampleRichInlineTooltip(URichTextBlock* InOwner, const FTextBlockStyle& InTextStyle, const FTextBlockStyle& InTooltipTextStyle)
 		: FRichTextDecorator(InOwner)
+		, TextStyle(InTextStyle)
+		, TooltipTextStyle(InTooltipTextStyle)
 	{
 	}
 
@@ -27,18 +29,22 @@ protected:
 	 * - RunInfo.Content is "Some text"
 	 * - RunInfo.MetaData[TEXT("text")] is "Some infos"
 	 */
-	virtual TSharedPtr<SWidget> CreateDecoratorWidget(const FTextRunInfo& RunInfo, const FTextBlockStyle& TextStyle) const override
+	virtual TSharedPtr<SWidget> CreateDecoratorWidget(const FTextRunInfo& InRunInfo, const FTextBlockStyle& InTextStyle) const override
 	{
 		return SNew(STextBlock)
-			.Text(RunInfo.Content)
+			.Text(InRunInfo.Content)
 			.TextStyle(&TextStyle)
 			.ToolTip(SNew(SToolTip)
 			[
 				SNew(STextBlock)
-				.Text(FText::FromString(RunInfo.MetaData[TEXT("text")]))
-				.TextStyle(&TextStyle)
+				.Text(FText::FromString(InRunInfo.MetaData[TEXT("text")]))
+				.TextStyle(&TooltipTextStyle)
 			]);
 	}
+
+private:
+	FTextBlockStyle TextStyle;
+	FTextBlockStyle TooltipTextStyle;
 };
 
 /////////////////////////////////////////////////////
@@ -52,7 +58,7 @@ USampleRichTextBlockTooltipDecorator::USampleRichTextBlockTooltipDecorator(const
 // Return our custom class for creating the inline widget
 TSharedPtr<ITextDecorator> USampleRichTextBlockTooltipDecorator::CreateDecorator(URichTextBlock* InOwner)
 {
-	return MakeShareable(new FSampleRichInlineTooltip(InOwner));
+	return MakeShareable(new FSampleRichInlineTooltip(InOwner, TextStyle, TooltipTextStyle));
 }
 
 /////////////////////////////////////////////////////

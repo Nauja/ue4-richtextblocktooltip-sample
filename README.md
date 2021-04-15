@@ -11,7 +11,7 @@ Sample of writing a custom RichTextBlock decorator for displaying a tooltip.
 
 - [Writing a custom **URichTextBlockDecorator**](#writing-a-custom-urichtextblockdecorator)
 - [Setting up HUD](#setting-up-hud)
-- [Use this custom decorator in Blueprint](#use-this-custom-decorator-in-blueprint)
+- [Registering the custom decorator](#registering-the-custom-decorator)
 
 ## Writing a custom **URichTextBlockDecorator**
 
@@ -136,13 +136,19 @@ The **SampleMap** map has only the bare minimum. For the purpose of this sample,
 
 ![LevelBlueprint](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-levelblueprint.png)
 
-**WBP_SampleHUD** contains a **URichTextBlock** widget that we will add our custom decorator class to:
+**WBP_SampleHUD** contains a **URichTextBlock** widget that we I added the custom decorator class to:
 
 ![HUDWidget](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-hud-widget.png)
 
-## Use this custom decorator in Blueprint
+## Registering the custom decorator
 
-The next step is to subclass **USampleRichTextBlockTooltipDecorator** as a Blueprint so we can customize it and assign it in Blueprint.
+For **USampleRichTextBlockTooltipDecorator** to be usable in Blueprint, the first thing is to subclass it as a Blueprint. For this, I created a **BP_RichTextBlockTooltipDecorator** that inherits from **USampleRichTextBlockTooltipDecorator**. This also allows for customizing the styles used for the text and the tooltip text in Editor:
+
+![Subclass](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-subclass.png)
+
+The next step is to register this decorator on our **URichTextBlock** widget:
+
+![RegisterDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-registerdecorator.png)
 
 ## License
 

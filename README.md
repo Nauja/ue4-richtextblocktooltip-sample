@@ -136,7 +136,7 @@ The **SampleMap** map has only the bare minimum. For the purpose of this sample,
 
 ![LevelBlueprint](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-levelblueprint.png)
 
-**WBP_SampleHUD** contains a **URichTextBlock** widget that we I added the custom decorator class to:
+**WBP_SampleHUD** contains a **URichTextBlock** widget I added the custom decorator class to:
 
 ![HUDWidget](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-hud-widget.png)
 

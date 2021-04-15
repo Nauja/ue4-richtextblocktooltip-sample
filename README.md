@@ -143,7 +143,7 @@ The **SampleMap** map has only the bare minimum. For the purpose of this sample,
 
 ## Registering the custom decorator
 
-For **USampleRichTextBlockTooltipDecorator** to be usable in Blueprint, the first thing is to subclass it as a Blueprint. For this, I created a **BP_RichTextBlockTooltipDecorator** that inherits from **USampleRichTextBlockTooltipDecorator**:
+For **USampleRichTextBlockTooltipDecorator** to be usable in Blueprint, the first thing is to subclass it as a Blueprint. For this, I created a **BP_SampleRichTextBlockTooltipDecorator** that inherits from **USampleRichTextBlockTooltipDecorator**:
 
 ![SubclassDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-subclass-decorator.png)
 

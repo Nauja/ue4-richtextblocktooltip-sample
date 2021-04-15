@@ -10,6 +10,7 @@ Sample of writing a custom RichTextBlock decorator for displaying a tooltip.
 ## Table of contents:
 
 - [Writing a custom **URichTextBlockDecorator**](#writing-a-custom-urichtextblockdecorator)
+- [Setting up a HUD](#setting-up-a-hud)
 - [Use this custom decorator in Blueprint](#use-this-custom-decorator-in-blueprint)
 
 ## Writing a custom **URichTextBlockDecorator**
@@ -128,6 +129,16 @@ TSharedPtr<ITextDecorator> USampleRichTextBlockTooltipDecorator::CreateDecorator
 Again, this is largerly copied from the code of **URichTextBlockImageDecorator**. As you can see, the implementation of **CreateDecorator** is really simple as it only return a new instance of **FSampleRichInlineTooltip**.
 
 **FSampleRichInlineTooltip** is the class that handle everything. The **Supports** function is called to know if the decorator can be used for a tag, returns **true** only if the tag's name is "tooltip" and if there is a "text" attribute. Then, **CreateDecoratorWidget** is called, and this is where we need to build our custom widget that will be displayed on screen.
+
+## Setting up a HUD
+
+The **SampleMap** map has only the bare minimum. For the purpose of this sample, it only adds **WBP_SampleHUD** to viewport (see Level Blueprint):
+
+![LevelBlueprint](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-levelblueprint.png)
+
+**WBP_SampleHUD** contains a **URichTextBlock** widget that we will add our custom decorator class to:
+
+![HUDWidget](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-hud-widget.png)
 
 ## Use this custom decorator in Blueprint
 

@@ -126,7 +126,7 @@ TSharedPtr<ITextDecorator> USampleRichTextBlockTooltipDecorator::CreateDecorator
 
 Again, this is largerly copied from the code of **URichTextBlockImageDecorator**. As you can see, the implementation of **CreateDecorator** is really simple as it only return a new instance of **FSampleRichInlineTooltip**.
 
-**FSampleRichInlineTooltip** is the class that handle everything. The **Supports** function called to know if the decorator can be used for a tag, returns **true** only if the tag's name is "tooltip" and if there is a "text" attribute. Then, **CreateDecoratorWidget** is called, and this is where we need to build our custom widget that will be displayed on screen.
+**FSampleRichInlineTooltip** is the class that handle everything. The **Supports** function is called to know if the decorator can be used for a tag, returns **true** only if the tag's name is "tooltip" and if there is a "text" attribute. Then, **CreateDecoratorWidget** is called, and this is where we need to build our custom widget that will be displayed on screen.
 
 ## License
 

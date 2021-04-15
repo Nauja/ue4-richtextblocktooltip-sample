@@ -18,7 +18,7 @@ Sample of writing a custom URichTextBlockDecorator for displaying a tooltip.
 
 Based on [Advanced Text Styling with Rich Text Block](https://www.unrealengine.com/en-US/tech-blog/advanced-text-styling-with-rich-text-block) documentation, you can create and add your own **URichTextBlockDecorator** class on a **URichTextBlock** to handle custom markup. There is nothing complicated here, and you can take example on the builtin **URichTextBlockImageDecorator** class.
 
-For this sample, I created a new decorator named **USampleRichTextBlockTooltipDecorator** that will replace any `<tooltip text="Some infos">Some text</>` tag in our text by a **UTextBlock** that can be hovered to display a tooltip.
+For this sample, I created a new decorator named **USampleRichTextBlockTooltipDecorator** that will replace any `<tooltip text="Some infos">Some text</>` tag by a **UTextBlock** that can be hovered to display a tooltip.
 
 Here is the definition in **SampleRichTextBlockTooltipDecorator.h**:
 

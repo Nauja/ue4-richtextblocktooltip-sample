@@ -10,7 +10,7 @@ Sample of writing a custom RichTextBlock decorator for displaying a tooltip.
 ## Table of contents:
 
 - [Writing a custom **URichTextBlockDecorator**](#writing-a-custom-urichtextblockdecorator)
-- [Setting up a HUD](#setting-up-a-hud)
+- [Setting up HUD](#setting-up-hud)
 - [Use this custom decorator in Blueprint](#use-this-custom-decorator-in-blueprint)
 
 ## Writing a custom **URichTextBlockDecorator**
@@ -130,7 +130,7 @@ Again, this is largerly copied from the code of **URichTextBlockImageDecorator**
 
 **FSampleRichInlineTooltip** is the class that handle everything. The **Supports** function is called to know if the decorator can be used for a tag, returns **true** only if the tag's name is "tooltip" and if there is a "text" attribute. Then, **CreateDecoratorWidget** is called, and this is where we need to build our custom widget that will be displayed on screen.
 
-## Setting up a HUD
+## Setting up HUD
 
 The **SampleMap** map has only the bare minimum. For the purpose of this sample, it only adds **WBP_SampleHUD** to viewport (see Level Blueprint):
 

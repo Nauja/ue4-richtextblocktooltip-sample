@@ -7,6 +7,8 @@ Sample of writing a custom URichTextBlockDecorator for displaying a tooltip.
 
 ![Preview](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/preview.gif)
 
+This sample has been created to demonstrate how the **URichTextBlockDecorator** feature can be used to make a **URichTextBlock** render some text with a tooltip displayed when hovered. The goal was to keep it as simple as possible, so while some features such as **Auto Wrap** may not work correctly, it should be possible to add them.
+
 ## Table of contents:
 
 - [Writing a custom **URichTextBlockDecorator**](#writing-a-custom-urichtextblockdecorator)

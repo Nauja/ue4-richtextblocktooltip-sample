@@ -7,6 +7,10 @@ Sample of writing a custom RichTextBlock decorator for displaying a tooltip.
 
 ![Preview](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/preview.gif)
 
+## Table of contents:
+
+- [TMP](#tmp)
+
 ## License
 
 Licensed under the [MIT](LICENSE) License.

@@ -58,7 +58,7 @@ protected:
 };
 ```
 
-**CreateDecorator** is the only function that you need to implement on this class. This must return an instance of **FRichTextDecorator** that will take care of parsing and building the widget to render. I also added the two properties **TextStyle** and **TooltipTextStyle** editable in blueprint to allow for styling the text and the tooltip text independently.
+**CreateDecorator** is the only function that you need to implement on this class. It must returns an instance of **FRichTextDecorator** that will take care of parsing and building the widget to render. I also added the two properties **TextStyle** and **TooltipTextStyle** editable in blueprint to allow for styling the text and the tooltip text independently.
 
 Here is the implementation in **SampleRichTextBlockTooltipDecorator.cpp**:
 

@@ -131,7 +131,7 @@ Again, this is largerly copied from the code of **URichTextBlockImageDecorator**
 
 ## Use this custom decorator in Blueprint
 
-The next step is to subclass **USampleRichTextBlockTooltipDecorator** as a Blueprint so we can customize it and assign it in UMG.
+The next step is to subclass **USampleRichTextBlockTooltipDecorator** as a Blueprint so we can customize it and assign it in Blueprint.
 
 ## License
 

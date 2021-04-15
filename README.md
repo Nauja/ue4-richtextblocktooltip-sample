@@ -12,6 +12,7 @@ Sample of writing a custom RichTextBlock decorator for displaying a tooltip.
 - [Writing a custom **URichTextBlockDecorator**](#writing-a-custom-urichtextblockdecorator)
 - [Setting up HUD](#setting-up-hud)
 - [Registering the custom decorator](#registering-the-custom-decorator)
+- [Creating a **DataTable** for default style set](#creating-a-datatable-for-default-style-set)
 
 ## Writing a custom **URichTextBlockDecorator**
 
@@ -142,13 +143,25 @@ The **SampleMap** map has only the bare minimum. For the purpose of this sample,
 
 ## Registering the custom decorator
 
-For **USampleRichTextBlockTooltipDecorator** to be usable in Blueprint, the first thing is to subclass it as a Blueprint. For this, I created a **BP_RichTextBlockTooltipDecorator** that inherits from **USampleRichTextBlockTooltipDecorator**. This also allows for customizing the styles used for the text and the tooltip text in Editor:
+For **USampleRichTextBlockTooltipDecorator** to be usable in Blueprint, the first thing is to subclass it as a Blueprint. For this, I created a **BP_RichTextBlockTooltipDecorator** that inherits from **USampleRichTextBlockTooltipDecorator**. This also allows for customizing the style sets used for the text and the tooltip text in Editor:
 
 ![Subclass](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-subclass.png)
 
 The next step is to register this decorator on our **URichTextBlock** widget:
 
 ![RegisterDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-registerdecorator.png)
+
+This makes the **URichTextBlock** use our decorator to parse and render `<tooltip text="...">...</>` tags.
+
+## Creating a **DataTable** for default style set
+
+This is required to apply a default style to the **URichTextBlock** text. For this, I created a **DT_SampleTextStyleSet** data table with a **RichTextStyleRow** row structure and added a "Default" entry:
+
+![RegisterDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-datatable.png)
+
+The next step is to assign this data table to our **URichTextBlock** widget:
+
+![RegisterDataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-registerdatatable.png)
 
 ## License
 

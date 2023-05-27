@@ -1,6 +1,6 @@
 # ue4-richtextblocktooltip-sample
 
-![UE4](https://img.shields.io/badge/UE4-4.25+-blue)
+![UE5](https://img.shields.io/badge/UE5-5.2+-blue)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Nauja/ue4-richtextblocktooltip-sample/master/LICENSE)
 
 Sample of writing a custom URichTextBlockDecorator in Unreal Engine 5 for displaying a tooltip.

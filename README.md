@@ -3,11 +3,13 @@
 ![UE4](https://img.shields.io/badge/UE4-4.25+-blue)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Nauja/ue4-richtextblocktooltip-sample/master/LICENSE)
 
-Sample of writing a custom URichTextBlockDecorator for displaying a tooltip.
+Sample of writing a custom URichTextBlockDecorator in Unreal Engine 5 for displaying a tooltip.
 
-![Preview](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/preview.gif)
+![Preview](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/preview.gif)
 
 This sample has been created to demonstrate how the **URichTextBlockDecorator** feature can be used to make a **URichTextBlock** render some text with a tooltip displayed when hovered. The goal was to keep it as simple as possible, so while some features such as **Auto Wrap** may not work correctly, it should be possible to add them.
+
+For an Unreal Engine 4 version, check the branch [ue4.25](https://github.com/Nauja/ue4-richtextblocktooltip-sample/tree/ue4.25).
 
 ## Table of contents:
 
@@ -137,25 +139,25 @@ Again, this is largerly copied from the code of **URichTextBlockImageDecorator**
 
 The **SampleMap** map has only the bare minimum. For the purpose of this sample, it only adds **WBP_SampleHUD** to viewport (see Level Blueprint):
 
-![LevelBlueprint](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-levelblueprint.png)
+![LevelBlueprint](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/editor-levelblueprint.png)
 
 **WBP_SampleHUD** contains a **URichTextBlock** widget I added the custom decorator class to:
 
-![HUDWidget](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-hud-widget.png)
+![HUDWidget](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/editor-hud-widget.png)
 
 ## Registering the custom decorator
 
 For **USampleRichTextBlockTooltipDecorator** to be usable in Blueprint, the first thing is to subclass it as a Blueprint. For this, I created a **BP_SampleRichTextBlockTooltipDecorator** that inherits from **USampleRichTextBlockTooltipDecorator**:
 
-![SubclassDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-subclass-decorator.png)
+![SubclassDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/editor-subclass-decorator.png)
 
 This also allows for customizing the style sets used for the text and the tooltip text in Editor:
 
-![Subclass](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-subclass.png)
+![Subclass](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/editor-subclass.png)
 
 The next step is to register this decorator on our **URichTextBlock** widget:
 
-![RegisterDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-registerdecorator.png)
+![RegisterDecorator](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/editor-registerdecorator.png)
 
 This makes the **URichTextBlock** use our decorator to parse and render `<tooltip text="...">...</>` tags.
 
@@ -163,15 +165,15 @@ This makes the **URichTextBlock** use our decorator to parse and render `<toolti
 
 This is required to apply a default style to the **URichTextBlock** text. For this, I created a **DT_SampleTextStyleSet** data table with a **RichTextStyleRow** row structure: 
 
-![SubclassDataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-subclass-datatable.png)
+![SubclassDataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/editor-subclass-datatable.png)
 
 I also added a "Default" entry:
 
-![DataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-datatable.png)
+![DataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/editor-datatable.png)
 
 The next step is to assign this data table to our **URichTextBlock** widget:
 
-![RegisterDataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media/editor-registerdatatable.png)
+![RegisterDataTable](https://github.com/Nauja/ue4-richtextblocktooltip-sample/raw/media5.2/editor-registerdatatable.png)
 
 ## License
 

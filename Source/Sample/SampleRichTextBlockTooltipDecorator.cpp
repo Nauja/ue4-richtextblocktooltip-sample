@@ -3,6 +3,10 @@
 #include "Widgets/SToolTip.h"
 #include "Widgets/Text/STextBlock.h"
 
+/*
+* RichTExt example
+* Try to hover <tooltip text="I am a tooltip">this word</> or <tooltip text="I am also a tooltip">this one</>
+*/
 
 // Class charged of creating the inline tooltip
 class FSampleRichInlineTooltip : public FRichTextDecorator
